@@ -1,5 +1,5 @@
 package com.una.demo.controllers;
 
-public class VehivuloController {
+public class VehiculoController {
     
 }
