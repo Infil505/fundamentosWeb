@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -42,12 +43,13 @@ public class DocumentController {
     public String eliminarCliente(@PathVariable("numeroDocumento") String numeroDocumento){
         boolean ok = this.documentoService.eliminarDocumento(numeroDocumento);
         if(ok){
-            return "se ha eliminado el Documento con numero: " + numeroDocumento;
+            return "se ha eliminado el Documento con el numero: " + numeroDocumento;
         }else{
-            return "No se ha encontrado el usuario con cedula: " + numeroDocumento;
+            return "No se ha encontrado el documento con el numero: " + numeroDocumento;
         }
     }
 
+    @PutMapping("/{numeroDocumento}")
     public boolean actualizarDocumento(String numeroDocumento, DocumentModel documento){
         Optional<DocumentModel> optionalDocument = documentoService.getById(numeroDocumento);
         if(optionalDocument.isPresent()){
