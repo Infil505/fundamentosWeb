@@ -8,9 +8,6 @@ import javax.persistence.*;
 @Table(name = "Documento")
 public class DocumentModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(nullable = false)
     private String numeroDocumento;
 
@@ -33,14 +30,6 @@ public class DocumentModel {
     }
 
     // Getters y Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getNumeroDocumento() {
         return numeroDocumento;
     }
@@ -76,7 +65,6 @@ public class DocumentModel {
     @Override
     public String toString() {
         return "DocumentModel{" +
-                "id=" + id +
                 ", numeroDocumento='" + numeroDocumento + '\'' +
                 ", fechaRegistro=" + fechaRegistro +
                 ", clienteCompareciente1=" + clienteCompareciente1 +

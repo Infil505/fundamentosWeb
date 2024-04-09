@@ -1,6 +1,7 @@
 package com.una.demo.services;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,18 @@ public class ClienteService {
 
     public ClienteModel guardarCliente(ClienteModel cliente){
         return ClienteRepositorio.save(cliente);
+    }
+
+    public Optional <ClienteModel> getById(String cedula){
+        return ClienteRepositorio.findById(cedula);
+    }
+
+    public boolean eliminarCliente (String cedula){
+        try{
+            ClienteRepositorio.deleteById(cedula);
+            return true;
+        }catch(Exception err){
+                return false;
+        }
     }
 }

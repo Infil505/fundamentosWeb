@@ -7,6 +7,5 @@ import com.una.demo.models.ClienteModel;
 
 @Repository
 public interface  ClienteRepositorio extends CrudRepository<ClienteModel, String>{
-
     
 }
