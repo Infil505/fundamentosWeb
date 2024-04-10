@@ -29,6 +29,9 @@ public class TerrenoModel  {
         this.documento = documento;
     }
 
+    public TerrenoModel() {
+    }
+
     // Getters y Setters
     public String getColindanteNorte() {
         return colindanteNorte;

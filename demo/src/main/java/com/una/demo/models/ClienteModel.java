@@ -25,6 +25,8 @@ public class ClienteModel {
         this.profesion = profesion;
         this.nacionalidad = nacionalidad;
     }
+    public ClienteModel() {
+    }
 
     // Getters y Setters
     public String getNombre() {

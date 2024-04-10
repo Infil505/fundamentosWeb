@@ -29,6 +29,8 @@ public class DocumentModel {
         this.clienteCompareciente2 = clienteCompareciente2;
     }
 
+    public DocumentModel() {
+    }
     // Getters y Setters
     public String getNumeroDocumento() {
         return numeroDocumento;
