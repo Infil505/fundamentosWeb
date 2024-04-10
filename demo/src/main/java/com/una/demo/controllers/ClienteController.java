@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.una.demo.models.ClienteModel;
 import com.una.demo.services.ClienteService;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/cliente")
+@CrossOrigin (origins = {"http://127.0.0.1:5500", "http://localhost:8080"}, maxAge = 3600)
 public class ClienteController {
     @Autowired
     ClienteService clienteService;
