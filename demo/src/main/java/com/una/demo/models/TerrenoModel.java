@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Terreno")
-public class TerrenoModel  {
+public class TerrenoModel {
     @Id
     @Column(unique = true, nullable = false)
     private String numeroPlano;
@@ -12,14 +12,11 @@ public class TerrenoModel  {
     private String colindanteSur;
     private String colindanteEste;
     private String colindanteOeste;
-    private double medida; 
-
-    @ManyToOne
-    @JoinColumn(name = "numeroEscritura", referencedColumnName = "numeroDocumento")
-    private DocumentModel documento;
+    private double medida;
+    private String documento;
 
     public TerrenoModel(String colindanteNorte, String colindanteSur, String colindanteEste, String colindanteOeste,
-                        double medida, String numeroPlano, DocumentModel documento) {
+                        double medida, String numeroPlano, String documento) {
         this.colindanteNorte = colindanteNorte;
         this.colindanteSur = colindanteSur;
         this.colindanteEste = colindanteEste;
@@ -81,11 +78,11 @@ public class TerrenoModel  {
         this.numeroPlano = numeroPlano;
     }
 
-    public DocumentModel getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public void setDocumento(DocumentModel documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
 
@@ -98,7 +95,8 @@ public class TerrenoModel  {
                 ", colindanteOeste='" + colindanteOeste + '\'' +
                 ", medida=" + medida +
                 ", numeroPlano='" + numeroPlano + '\'' +
-                ", documento=" + documento +
+                ", documento='" + documento + '\'' +
                 '}';
     }
 }
+
