@@ -60,7 +60,7 @@ public class VehiculoController {
             vehiculoExistente.setNumeroChasis(vehiculo.getNumeroChasis());
             vehiculoExistente.setNumeroMotor(vehiculo.getNumeroMotor());
             vehiculoExistente.setValorFiscal(vehiculo.getValorFiscal());
-            vehiculoExistente.setDocumento(vehiculo.getDocumento());
+            vehiculoExistente.setNumeroDocumento(vehiculo.getNumeroDocumento());
             
             vehiculoService.guardarVehiculo(vehiculoExistente);
             return true;

@@ -29,24 +29,8 @@ public class VehiculoModel {
     @Column(nullable = false, name = "valor_fiscal")
     private double valorFiscal;
 
-    @ManyToOne
-    @JoinColumn(name = "numero_escritura", referencedColumnName = "numeroDocumento")
-    private DocumentModel documento;
-
-    public VehiculoModel() {
-    }
-
-    public VehiculoModel(String placa, String marca, String estilo, String carroceria, String numeroChasis, String numeroMotor, String marcaMotor, double valorFiscal, DocumentModel documento) {
-        this.placa = placa;
-        this.marca = marca;
-        this.estilo = estilo;
-        this.carroceria = carroceria;
-        this.numeroChasis = numeroChasis;
-        this.numeroMotor = numeroMotor;
-        this.marcaMotor = marcaMotor;
-        this.valorFiscal = valorFiscal;
-        this.documento = documento;
-    }
+    @Column(name = "numero_documento")
+    private String numeroDocumento;
 
     // Getters y Setters
     public String getPlaca() {
@@ -113,12 +97,12 @@ public class VehiculoModel {
         this.valorFiscal = valorFiscal;
     }
 
-    public DocumentModel getDocumento() {
-        return documento;
+    public String getNumeroDocumento() {
+        return numeroDocumento;
     }
 
-    public void setDocumento(DocumentModel documento) {
-        this.documento = documento;
+    public void setNumeroDocumento(String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
     }
 
     @Override
@@ -132,8 +116,7 @@ public class VehiculoModel {
                 ", numeroMotor='" + numeroMotor + '\'' +
                 ", marcaMotor='" + marcaMotor + '\'' +
                 ", valorFiscal=" + valorFiscal +
-                ", documento=" + documento +
+                ", numeroDocumento='" + numeroDocumento + '\'' +
                 '}';
     }
 }
-
