@@ -40,7 +40,7 @@ public class ClienteController {
         return this.clienteService.getById(cedula);
     }
     
-    @DeleteMapping(path = ("/cedula"))
+    @DeleteMapping(path = ("/{cedula}"))
     public String eliminarCliente(@PathVariable("cedula") String cedula){
         boolean ok = this.clienteService.eliminarCliente(cedula);
         if(ok){
