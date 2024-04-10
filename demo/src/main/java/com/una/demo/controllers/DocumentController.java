@@ -54,8 +54,8 @@ public class DocumentController {
         Optional<DocumentModel> optionalDocument = documentoService.getById(numeroDocumento);
         if(optionalDocument.isPresent()){
             DocumentModel documentExistente = optionalDocument.get();
-            documentExistente.setClienteCompareciente1(documento.getClienteCompareciente1());
-            documentExistente.setClienteCompareciente2(documento.getClienteCompareciente2());
+            documentExistente.setCedulaCompareciente1(documento.getCedulaCompareciente1());
+            documentExistente.setCedulaCompareciente2(documento.getCedulaCompareciente2());
             documentExistente.setFechaRegistro(documento.getFechaRegistro());
             
             documentoService.guardaDocumento(documentExistente);

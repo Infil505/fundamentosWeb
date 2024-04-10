@@ -8,25 +8,23 @@ import javax.persistence.*;
 @Table(name = "Documento")
 public class DocumentModel {
     @Id
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String numeroDocumento;
 
     @Column(nullable = false)
     private Date fechaRegistro;
 
-    @ManyToOne
-    @JoinColumn(name = "cedula_compareciente_1")
-    private ClienteModel clienteCompareciente1;
+    @Column(nullable = false)
+    private String cedulaCompareciente1;
 
-    @ManyToOne
-    @JoinColumn(name = "cedula_compareciente_2")
-    private ClienteModel clienteCompareciente2;
+    @Column(nullable = false)
+    private String cedulaCompareciente2;
 
-    public DocumentModel(String numeroDocumento, Date fechaRegistro, ClienteModel clienteCompareciente1, ClienteModel clienteCompareciente2) {
+    public DocumentModel(String numeroDocumento, Date fechaRegistro, String cedulaCompareciente1, String cedulaCompareciente2) {
         this.numeroDocumento = numeroDocumento;
         this.fechaRegistro = fechaRegistro;
-        this.clienteCompareciente1 = clienteCompareciente1;
-        this.clienteCompareciente2 = clienteCompareciente2;
+        this.cedulaCompareciente1 = cedulaCompareciente1;
+        this.cedulaCompareciente2 = cedulaCompareciente2;
     }
 
     public DocumentModel() {
@@ -48,20 +46,20 @@ public class DocumentModel {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public ClienteModel getClienteCompareciente1() {
-        return clienteCompareciente1;
+    public String getCedulaCompareciente1() {
+        return cedulaCompareciente1;
     }
 
-    public void setClienteCompareciente1(ClienteModel clienteCompareciente1) {
-        this.clienteCompareciente1 = clienteCompareciente1;
+    public void setCedulaCompareciente1(String cedulaCompareciente1) {
+        this.cedulaCompareciente1 = cedulaCompareciente1;
     }
 
-    public ClienteModel getClienteCompareciente2() {
-        return clienteCompareciente2;
+    public String getCedulaCompareciente2() {
+        return cedulaCompareciente2;
     }
 
-    public void setClienteCompareciente2(ClienteModel clienteCompareciente2) {
-        this.clienteCompareciente2 = clienteCompareciente2;
+    public void setCedulaCompareciente2(String cedulaCompareciente2) {
+        this.cedulaCompareciente2 = cedulaCompareciente2;
     }
 
     @Override
@@ -69,8 +67,8 @@ public class DocumentModel {
         return "DocumentModel{" +
                 ", numeroDocumento='" + numeroDocumento + '\'' +
                 ", fechaRegistro=" + fechaRegistro +
-                ", clienteCompareciente1=" + clienteCompareciente1 +
-                ", clienteCompareciente2=" + clienteCompareciente2 +
+                ", cedulaCompareciente1='" + cedulaCompareciente1 + '\'' +
+                ", cedulaCompareciente2='" + cedulaCompareciente2 + '\'' +
                 '}';
     }
 }
