@@ -12,9 +12,9 @@ public class TerrenoModel  {
     private String colindanteSur;
     private String colindanteEste;
     private String colindanteOeste;
-    private double medida; // en metros cuadrados
+    private double medida; 
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "numeroEscritura", referencedColumnName = "numeroDocumento")
     private DocumentModel documento;
 
