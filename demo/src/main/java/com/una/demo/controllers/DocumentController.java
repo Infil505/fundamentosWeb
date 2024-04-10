@@ -50,7 +50,7 @@ public class DocumentController {
     }
 
     @PutMapping("/{numeroDocumento}")
-    public boolean actualizarDocumento(@PathVariable("numeroDocumento") String numeroDocumento, DocumentModel documento){
+    public boolean actualizarDocumento(@PathVariable("numeroDocumento") String numeroDocumento,@RequestBody DocumentModel documento){
         Optional<DocumentModel> optionalDocument = documentoService.getById(numeroDocumento);
         if(optionalDocument.isPresent()){
             DocumentModel documentExistente = optionalDocument.get();

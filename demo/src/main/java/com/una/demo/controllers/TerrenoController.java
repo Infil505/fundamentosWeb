@@ -47,7 +47,7 @@ public class TerrenoController {
         }
     }
     @PutMapping("/{numeroPlano}")
-    public boolean actualizarTerreno(@PathVariable("numeroPlano") String numeroPlano, TerrenoModel terreno){
+    public boolean actualizarTerreno(@PathVariable("numeroPlano") String numeroPlano,@RequestBody TerrenoModel terreno){
         Optional<TerrenoModel> optionalTerreno = terrenoService.getById(numeroPlano);
         if(optionalTerreno.isPresent()){
             TerrenoModel terrenoExistente = optionalTerreno.get();

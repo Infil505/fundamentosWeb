@@ -51,7 +51,7 @@ public class ClienteController {
     }
     
     @PutMapping("/{cedula}")
-    public boolean actualizarCliente(@PathVariable("cedula") String cedula, ClienteModel cliente){
+    public boolean actualizarCliente(@PathVariable("cedula") String cedula,@RequestBody ClienteModel cliente){
         Optional<ClienteModel> optionalCliente = clienteService.getById(cedula);
         if(optionalCliente.isPresent()){
             ClienteModel clienteExistente = optionalCliente.get();

@@ -49,7 +49,7 @@ public class VehiculoController {
         }
     }
     @PutMapping("/{matricula}")
-    public boolean actualizarDocumento(@PathVariable("matricula") String matricula, VehiculoModel vehiculo){
+    public boolean actualizarDocumento(@PathVariable("matricula") String matricula,@RequestBody VehiculoModel vehiculo){
         Optional<VehiculoModel> optionalVehiculo = vehiculoService.getById(matricula);
         if(optionalVehiculo.isPresent()){
             VehiculoModel vehiculoExistente = optionalVehiculo.get();
