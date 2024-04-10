@@ -39,7 +39,7 @@ public class VehiculoController {
         return this.vehiculoService.getById(matricula);
     }
 
-    @DeleteMapping(path = ("/matricula"))
+    @DeleteMapping(path = ("/{matricula}"))
     public String eliminarCliente(@PathVariable("matricula") String matricula){
         boolean ok = this.vehiculoService.eliminarVehiculo(matricula);
         if(ok){

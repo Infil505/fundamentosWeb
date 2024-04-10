@@ -38,7 +38,7 @@ public class TerrenoController {
         return this.terrenoService.getById(numeroPlano);
     }
 
-    @DeleteMapping(path = ("/numeroPlano"))
+    @DeleteMapping(path = ("/{numeroPlano}"))
     public String eliminarTerreno(@PathVariable("numeroPlano") String numeroPlano){
         boolean ok = this.terrenoService.eliminarTerreno(numeroPlano);        if(ok){
             return "se ha eliminado el terreno con numero de plano: " + numeroPlano;

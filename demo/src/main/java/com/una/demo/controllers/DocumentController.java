@@ -39,7 +39,7 @@ public class DocumentController {
         return this.documentoService.getById(numeroDocumento);
     }
 
-    @DeleteMapping(path = ("/numeroDocumento"))
+    @DeleteMapping(path = ("/{numeroDocumento}"))
     public String eliminarCliente(@PathVariable("numeroDocumento") String numeroDocumento){
         boolean ok = this.documentoService.eliminarDocumento(numeroDocumento);
         if(ok){
